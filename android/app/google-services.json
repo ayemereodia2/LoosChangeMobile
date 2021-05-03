@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "368108179739",
+    "firebase_url": "https://loosechange-884ec.firebaseio.com",
+    "project_id": "loosechange-884ec",
+    "storage_bucket": "loosechange-884ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368108179739:android:e1be0d5bc136320c",
+        "android_client_info": {
+          "package_name": "com.loosechangeng.loosechange"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368108179739-dum9q03622rjnvdjgqa1qf4p2phcheqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMl5mczHFO_Cc_7Nx21PK-Q580RmyhFS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368108179739-dum9q03622rjnvdjgqa1qf4p2phcheqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368108179739:android:88add68805220c56",
+        "android_client_info": {
+          "package_name": "com.example.loosechange"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368108179739-dum9q03622rjnvdjgqa1qf4p2phcheqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMl5mczHFO_Cc_7Nx21PK-Q580RmyhFS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368108179739-dum9q03622rjnvdjgqa1qf4p2phcheqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

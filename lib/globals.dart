@@ -1,0 +1,24 @@
+library my_prj.globals;
+
+Map userDetails;
+Map profileDetails;
+Map verifyDetails;
+List transactionsDetails;
+Map accountDetails;
+List cardDetails;
+List withDetails;
+String receiverUsername;
+Map rDetails;
+bool transfercomplete = false;
+bool profileUpdateComplete = false;
+bool accountUpdateComplete = false;
+bool withdrawalComplete = false;
+String transferUsername;
+String transferAmount;
+String transferDate;
+int vCode;
+String vPhone;
+String bankTransferAmount;
+int payBal;
+bool confirmedBankTransfer = false;
+bool transferTimeElapsed = false;
