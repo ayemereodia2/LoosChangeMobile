@@ -36,9 +36,8 @@ class _VerifyPhonePageState extends State<VerifyPhonePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-
-    profileList = []; //globals.profileDetails.values.toList();
-    verificationsList = [];// globals.verifyDetails.values.toList();
+    profileList = globals.profileDetails.values.toList();
+    verificationsList =  globals.verifyDetails.values.toList();
     print(verificationsList);
 
   }
@@ -116,21 +115,21 @@ class _VerifyPhonePageState extends State<VerifyPhonePage> {
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 20),
-                              child: Container(
-                                //color: Colors.yellow,
-                                height: 70.0,
-                                width: 280,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(20.0),
-                                    topLeft: Radius.circular(20.0),
-                                    bottomRight: Radius.circular(20.0),
-                                    bottomLeft: Radius.circular(20.0),
+                              child: Expanded(
+                                flex: 1,
+                                child: Container(
+                                  //color: Colors.yellow,
+                                  height: 70.0,
+                                  width: 220,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(20.0),
+                                      topLeft: Radius.circular(20.0),
+                                      bottomRight: Radius.circular(20.0),
+                                      bottomLeft: Radius.circular(20.0),
+                                    ),
+                                    color: Colors.white,
                                   ),
-                                  color: Colors.white,
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
                                   child: TextFormField(
                                     decoration: InputDecoration(
                                       labelText: 'Phone Number',
@@ -198,15 +197,15 @@ class _VerifyPhonePageState extends State<VerifyPhonePage> {
       var randomizer = new Random(); 
       var rNum = min + randomizer.nextInt(max - min);
       
-      var url = "https://api.twilio.com/2010-04-01/Accounts/AC11e2082a48fa4c9d8c04fa145af48f39/Messages.json";
+      var url = "https://api.twilio.com/2010-04-01/Accounts/ACab33d89a516b5f4f3ba7e52249459f76/Messages.json";
 
       Map text = {
         "Body" : rNum.toString(),
-        "From" : 'LooseChange',
+         "From" : 'MG2674c1fab703733c203747e4e71d70bf',
         "To" : phoneNumber,
       };
 
-    var key = base64.encode(utf8.encode('AC11e2082a48fa4c9d8c04fa145af48f39' + ':' + 'ba7ea8b9e95ac75da65d48a09372dd5a'));
+    var key = base64.encode(utf8.encode('ACab33d89a516b5f4f3ba7e52249459f76' + ':' + 'ff66821b1f27f88a538ad4f5e37fe93d'));
     // print(key);
 
     var body = json.encode(text);
@@ -223,7 +222,7 @@ class _VerifyPhonePageState extends State<VerifyPhonePage> {
     textArray = json.decode(response.body);
     print(textArray);
 
-    if(textArray["account_sid"] == "AC11e2082a48fa4c9d8c04fa145af48f39"){
+    if(textArray["account_sid"] == "ACab33d89a516b5f4f3ba7e52249459f76"){
       final file = await _localTokenFile;
       // Read the file
       String contents = await file.readAsString();
@@ -234,8 +233,10 @@ class _VerifyPhonePageState extends State<VerifyPhonePage> {
       };
       globals.vCode = rNum;
       globals.vPhone = phoneNumber;
+      // globals.setvPhone(phoneNumber);
+      // globals.setvCode(rNum);
       var vbody = json.encode(vTable);
-
+      print("the verif: "+verificationsList[0].toString());
       Response verResponse = await put(
         'https://lcapi.loosechangeng.com/api/verifications/' + verificationsList[0].toString() + '/',
         headers: {
@@ -284,6 +285,7 @@ class _VerifyPhonePageState extends State<VerifyPhonePage> {
     
       }
     } on SocketException catch (_) {
+      pr.hide();
       noConnection(context);
     }
 

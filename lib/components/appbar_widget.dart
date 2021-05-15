@@ -21,6 +21,7 @@ class CustomAppBar extends StatelessWidget {
     return AppBar(
       toolbarOpacity: .5,
       backgroundColor: Colors.transparent,
+      iconTheme: IconThemeData(color: Colors.lightGreen),
       elevation: 0.0,
       actions: <Widget>[
         Expanded(
@@ -36,7 +37,7 @@ class CustomAppBar extends StatelessWidget {
                   child: new ReusableText(
                     customtext: appbarTextOne,
                     customFontSize: appbarFontSizeOne,
-                    colour: Color(0xFFFFFFFF),
+                    colour: Colors.blueGrey,
                   ),
                 ),
                 Row(
@@ -46,14 +47,14 @@ class CustomAppBar extends StatelessWidget {
                       child: new ReusableText(
                         customtext: appbarTextTwo,
                         customFontSize: appbarFontSizeTwo,
-                        colour: Color(0xFFFFFFFF),
+                        colour: Colors.blueGrey,
                       ),
                     ),
                     Container(
                       child: new ReusableText(
                         customtext: appbarTextThree,
                         customFontSize: appbarFontSizeTwo,
-                        colour: Color(0xFFFFFFFF),
+                        colour: Colors.blueGrey,
                       ),
                     ),
                   ],

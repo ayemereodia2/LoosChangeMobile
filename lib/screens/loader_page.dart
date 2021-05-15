@@ -34,7 +34,7 @@ class _LoaderPageState extends State<LoaderPage> {
           decoration: bodyGradientColor(),
           child: Center(
             child:
-                SpinKitWave(color: Colors.white, type: SpinKitWaveType.start),
+                SpinKitWave(color: Colors.lightGreen, type: SpinKitWaveType.start),
           ),
         ),
       ),
@@ -181,13 +181,14 @@ class _LoaderPageState extends State<LoaderPage> {
 
           Map verify = user["verify"];
           globals.verifyDetails = verify;
+          globals.setVerifyDetails(verify);
           // print(globals.verifyDetails);
 
           if (verify["verified"] == false) {
             Navigator.pushNamedAndRemoveUntil(
-                context, '/verify-code', (route) => false);
+                context, '/verify-phone', (route) => false);
           } else {
-            Navigator.pushReplacementNamed(context, '/check-code');
+            Navigator.pushReplacementNamed(context, '/homepage');
           }
 
           return user;

@@ -343,7 +343,7 @@ class _HomePageState extends State<HomePage> {
                   body = Text("pull up load");
                 } else if (mode == LoadStatus.loading) {
                   body = SpinKitWave(
-                      color: Colors.white, type: SpinKitWaveType.start);
+                      color: Colors.lightGreen, type: SpinKitWaveType.start);
                 } else if (mode == LoadStatus.failed) {
                   body = Text("Load Failed!Click retry!");
                 } else if (mode == LoadStatus.canLoading) {
@@ -419,8 +419,8 @@ class _HomePageState extends State<HomePage> {
                                 0.9
                               ], colors: [
                                 Color(0xFF9DCB3B),
-                                Color(0xFF4BB949).withOpacity(0.4),
-                                Color(0xFF9DCCB3B).withOpacity(0.1)
+                                Colors.blueGrey,
+                                Colors.white12
                               ]),
                             ),
                             child: FlatButton(
@@ -438,7 +438,7 @@ class _HomePageState extends State<HomePage> {
                     customChild: Center(
                       child: ReusableText(
                         customtext: 'Tap to scan QR code',
-                        colour: Color(0xFFFFFFFF),
+                        colour: Colors.blueGrey,
                         customFontSize: 14.0,
                       ),
                     ),

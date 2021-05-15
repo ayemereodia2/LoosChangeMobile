@@ -249,7 +249,9 @@ class _VerifyCodePageState extends State<VerifyCodePage> {
       final file = await _localTokenFile;
       // Read the file
       String contents = await file.readAsString();
+      //      int resultant = await globals.getvCode();
       if (code == globals.vCode.toString()) {
+        print("I have been verified oooo");
         pr.show();
         Map vTable = {
           "verified": true,
@@ -267,6 +269,8 @@ class _VerifyCodePageState extends State<VerifyCodePage> {
           body: vbody,
         );
         if (verResponse.statusCode == 200) {
+          print("Again! I have been verified oooo");
+
           int min = 1000; //min and max values act as your 6 digit range
           int max = 9999;
           var randomizer = new Random();
@@ -287,22 +291,19 @@ class _VerifyCodePageState extends State<VerifyCodePage> {
               body: pbody,
             );
             print(prrResponse);
-
-          var url =
-              "https://api.twilio.com/2010-04-01/Accounts/AC11e2082a48fa4c9d8c04fa145af48f39/Messages.json";
-
+          var url = "https://api.twilio.com/2010-04-01/Accounts/ACab33d89a516b5f4f3ba7e52249459f76/Messages.json";
           Map text = {
             "Body":
-                'This is your withdrawal pin. Keep it safe and secret as your pin will be required whenever you make a withdrawal request. Pin: ' +
+                'This is your default withdrawal pin. Keep it safe and secret as your pin will be required whenever you make a withdrawal request. Pin: ' +
                     rNum.toString(),
-            "From": 'LooseChange',
+            "From": 'MG2674c1fab703733c203747e4e71d70bf',
             "To": globals.vPhone,
           };
 
           var key = base64.encode(utf8.encode(
-              'AC11e2082a48fa4c9d8c04fa145af48f39' +
+              'ACab33d89a516b5f4f3ba7e52249459f76' +
                   ':' +
-                  'ba7ea8b9e95ac75da65d48a09372dd5a'));
+                  'ff66821b1f27f88a538ad4f5e37fe93d'));
 
           var body = json.encode(text);
           var client = http.Client();
@@ -319,7 +320,7 @@ class _VerifyCodePageState extends State<VerifyCodePage> {
           print(textArray);
 
           if (textArray["account_sid"] ==
-              "AC11e2082a48fa4c9d8c04fa145af48f39") {
+              "ACab33d89a516b5f4f3ba7e52249459f76") {
             pr.hide();
             Navigator.pushReplacementNamed(context, '/homepage');
           } else {
@@ -345,16 +346,15 @@ class _VerifyCodePageState extends State<VerifyCodePage> {
     try {
       final result = await InternetAddress.lookup('google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-
-      var url = "https://api.twilio.com/2010-04-01/Accounts/AC11e2082a48fa4c9d8c04fa145af48f39/Messages.json";
+        var url = "https://api.twilio.com/2010-04-01/Accounts/ACab33d89a516b5f4f3ba7e52249459f76/Messages.json";
 
         Map text = {
           "Body" : globals.vCode.toString(),
-          "From" : 'LooseChange',
+          "From" : 'MG2674c1fab703733c203747e4e71d70bf',
           "To" : globals.vPhone,
         };
 
-      var key = base64.encode(utf8.encode('AC11e2082a48fa4c9d8c04fa145af48f39' + ':' + 'ba7ea8b9e95ac75da65d48a09372dd5a'));
+      var key = base64.encode(utf8.encode('ACab33d89a516b5f4f3ba7e52249459f76' + ':' + 'ff66821b1f27f88a538ad4f5e37fe93d'));
       print(key);
 
       var body = json.encode(text);
@@ -371,7 +371,7 @@ class _VerifyCodePageState extends State<VerifyCodePage> {
       textArray = json.decode(response.body);
       print(textArray);
 
-      if(textArray["account_sid"] == "AC11e2082a48fa4c9d8c04fa145af48f39"){
+      if(textArray["account_sid"] == "ACab33d89a516b5f4f3ba7e52249459f76"){
         codeResent(context);
       }else{
         errorSend(context);
@@ -389,7 +389,7 @@ class _VerifyCodePageState extends State<VerifyCodePage> {
       final result = await InternetAddress.lookup('google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
 
-      var url = "https://api.twilio.com/2010-04-01/Accounts/AC11e2082a48fa4c9d8c04fa145af48f39/Calls.json";
+      var url = "https://api.twilio.com/2010-04-01/Accounts/ACab33d89a516b5f4f3ba7e52249459f76/Calls.json";
 
         Map text = {
           "Twiml" : "<Response><Say>Hello ," + globals.userDetails.values.toList()[3] + ". Your verification code is" +
@@ -397,11 +397,11 @@ class _VerifyCodePageState extends State<VerifyCodePage> {
             ". I repeat, your code is" +
             globals.vCode.toString() + 
             "</Say></Response>",
-          "From" : '+12058803891',
+          "From" : 'MG2674c1fab703733c203747e4e71d70bf',
           "To" : globals.vPhone,
         };
 
-      var key = base64.encode(utf8.encode('AC11e2082a48fa4c9d8c04fa145af48f39' + ':' + 'ba7ea8b9e95ac75da65d48a09372dd5a'));
+      var key = base64.encode(utf8.encode('ACab33d89a516b5f4f3ba7e52249459f76' + ':' + 'ff66821b1f27f88a538ad4f5e37fe93d'));
       print(key);
 
       var body = json.encode(text);
@@ -418,7 +418,7 @@ class _VerifyCodePageState extends State<VerifyCodePage> {
       textArray = json.decode(response.body);
       print(textArray);
 
-      if(textArray["account_sid"] == "AC11e2082a48fa4c9d8c04fa145af48f39"){
+      if(textArray["account_sid"] == "ACab33d89a516b5f4f3ba7e52249459f76"){
         codeResent(context);
       }else{
         errorSend(context);

@@ -131,6 +131,7 @@ class _SignupPageState extends State<SignupPage> {
                         padding: EdgeInsets.only(left: 40.0, right: 16.0),
                         child: new AuthButton(
                           onPressed: () {
+                            print('koool');
                             performRegister();
                           },
                           buttontext: 'Sign Up',
@@ -215,19 +216,19 @@ class _SignupPageState extends State<SignupPage> {
 
   Future<http.Response> performRegister() async{
 
-    if (this.formkey.currentState.validate()) {
-      print("Validated");
-    }else{
-      print("Not Validated");
-      Future.delayed(
-        Duration(seconds: 2),
-            () => 'Error on validation',
-      );
-    }
+    // if (this.formkey.currentState.validate()) {
+    //   print("Validated");
+    // }else{
+    //   print("Not Validated");
+    //   Future.delayed(
+    //     Duration(seconds: 2),
+    //         () => 'Error on validation',
+    //   );
+    // }
     try {
       final result = await InternetAddress.lookup('google.com');
-      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-      
+      if (true) {
+      print('bool');
     String username = usernameController.text.toLowerCase();
     String first_name = fNameController.text;
     String last_name =  lNameController.text;
@@ -303,11 +304,11 @@ class _SignupPageState extends State<SignupPage> {
               new Future.delayed(const Duration(seconds: 1))
               .then((_) => {
                 pr.hide(),
-                //Navigator.pushReplacementNamed(context, '/')
+                Navigator.pushReplacementNamed(context, '/')
                 //print('about to navigate'),
 
-               Navigator.pushNamedAndRemoveUntil(
-                   context, '/verify-phone', (route) => false)
+              // Navigator.pushNamedAndRemoveUntil(
+                   //context, '/verify-phone', (route) => false)
               });
               
             }else{

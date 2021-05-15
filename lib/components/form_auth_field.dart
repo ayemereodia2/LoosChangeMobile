@@ -37,24 +37,24 @@ class FormAuthField extends StatelessWidget {
         autovalidateMode: autovalidateMode,
         textInputAction: customtextinputaction,
         style: TextStyle(
-          color: Color(0xFFFFFFFF),
+          color: Colors.black,
         ),
         keyboardType: customkeyboardinputtype,
         decoration: InputDecoration(
           icon: Icon(
             customicon,
-            color: Colors.white.withOpacity(0.5),
+            color: Colors.blueGrey,
           ),
           hintText: customhinttext,
           hintStyle: TextStyle(
-            color: Color(0xFFFFFFFF),
+            color: Colors.black,
           ),
           enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.white),
+            borderSide: BorderSide(color: Colors.blueGrey),
           ),
           focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.white24,
+              color: Colors.lightGreen,
             ),
           ),
         ),

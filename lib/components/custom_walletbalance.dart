@@ -58,7 +58,7 @@ class _CustomWalletBalanceState extends State<CustomWalletBalance> {
                 ReusableText(
                   customtext: 'Wallet Balance',
                   customFontSize: 16.0,
-                  colour: Color(0xFF000000),
+                  colour: Colors.blueGrey,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
@@ -70,12 +70,12 @@ class _CustomWalletBalanceState extends State<CustomWalletBalance> {
                       ReusableText(
                         customtext: '₦',
                         customFontSize: 36.0,
-                        colour: Color(0xFFFFFFFF),
+                        colour: Colors.blueGrey,
                       ),
                       ReusableText(
                         customtext: widget.customtext,
                         customFontSize: 36.0,
-                        colour: Color(0xFFFFFFFF),
+                        colour: Colors.blueGrey,
                       ),
                       // ReusableText(
                       //   customtext: '.00',

@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             Expanded(
               child: Image(
-                image: AssetImage('images/logo.png'),
+                image: AssetImage('images/loosecng.jpeg'),
               ),
             ),
             Expanded(
@@ -112,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                             children: <Widget>[
                               ReusableText(
                                 customtext: 'Forgot your password? ',
-                                colour: Colors.white.withOpacity(0.5),
+                                colour: Colors.blueGrey,
                                 customFontSize: 14.0,
                               ),
                               GestureDetector(
@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                                 },
                                 child: ReusableText(
                                   customtext: 'Reset',
-                                  colour: Colors.white,
+                                  colour: Colors.black,
                                 ),
                               ),
                             ],
@@ -147,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                       children: <Widget>[
                         ReusableText(
                           customtext: 'Don\'t have an account? ',
-                          colour: Colors.white.withOpacity(0.5),
+                          colour: Colors.black,
                           customFontSize: 14.0,
                         ),
                         GestureDetector(
@@ -156,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                           },
                           child: ReusableText(
                             customtext: 'Register',
-                            colour: Colors.white,
+                            colour: Colors.lightGreen,
                           ),
                         ),
                       ],

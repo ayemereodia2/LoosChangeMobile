@@ -565,6 +565,7 @@ class _TransferPageState extends State<TransferPage> {
         var date = DateTime.now();
         var rcb;
         try {
+          pr.show();
           getUserUpdatedDetails().then((response) => {
                 // print(amount);
                 // print('fjskgkldfjsgsfd');
@@ -576,7 +577,7 @@ class _TransferPageState extends State<TransferPage> {
                     print(true),
                     if (amount >= 0.01 && amount <= 10000000)
                       {
-                        pr.show(),
+                        //pr.show(),
                         balance = profileList[3] != null ? profileList[3] : 0,
                         balance = double.tryParse(balance),
                         balance = balance - amount,
@@ -624,6 +625,7 @@ class _TransferPageState extends State<TransferPage> {
                     // print('false');
                   }
               });
+          pr.hide();
           // Navigator.pushReplacementNamed(context, '/login');
         } catch (e) {
           print(e);
