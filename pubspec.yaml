@@ -47,7 +47,7 @@ dependencies:
   intl: ^0.16.1
   country_code_picker: ^1.2.4
   sliding_up_panel: ^1.0.2
-  shared_preferences: ^0.5.12+4
+#  shared_preferences: ^0.5.12+4
 
 dev_dependencies:
   flutter_test:
